@@ -4,7 +4,7 @@ from qdrant_client import models
 def forward(client):
     # Your migration logic here
     client.update_collection(
-        collection_name="dobby-springworks-be-collection",
+        collection_name="collection-name",
         # vectors_config=models.VectorParams(
         #     size=3072, distance=models.Distance.COSINE, on_disk=True
         # ),
@@ -30,7 +30,7 @@ def forward(client):
 
     for index in indices:
         client.create_payload_index(
-            collection_name="dobby-springworks-be-collection",
+            collection_name="collection-name",
             field_name=index,
             field_schema=models.PayloadSchemaType.KEYWORD,
         )
